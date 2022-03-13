@@ -16,18 +16,14 @@ class Students:
         averages = [sum(row) / len(row) for row in self.students]
         _max = max(averages)
         max_indices = [i for i, v in enumerate(averages) if v == _max]
-        _students = []
-        for index in max_indices:
-            _students.append(self.students[index])
+        _students = [self.students[index] for index in max_indices]
         return _students, _max
 
     def lowest_avg(self) -> (list, float):
         averages = [sum(row) / len(row) for row in self.students]
         _min = min(averages)
         min_indices = [i for i, row in enumerate(averages) if row == _min]
-        _students = []
-        for index in min_indices:
-            _students.append(self.students[index])
+        _students = [self.students[index] for index in min_indices]
         return _students, _min
 
     def highest_grades(self) -> (list, int, float):
