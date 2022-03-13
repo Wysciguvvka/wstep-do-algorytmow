@@ -48,7 +48,7 @@ class Students:
         failed_students = [True if list(row).count(2.0) >= n else False for row in self.students]
         return failed_students.count(True), n
 
-    def __str__(self):
+    def __str__(self) -> str:
         __newline = '\n'
         max_students, max_avg = self.highest_avg()
         min_students, min_avg = self.lowest_avg()
