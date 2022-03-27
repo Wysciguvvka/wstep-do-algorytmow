@@ -1,3 +1,4 @@
+import math
 from typing import Callable
 import asyncio
 
@@ -45,12 +46,13 @@ async def insertionsort(to_sort: list) -> list:
 
 
 async def selectionsort(to_sort: list) -> list:
-    for i in range(len(to_sort)):
-        min_idx = i
-        for j in range(i + 1, len(to_sort)):
-            if to_sort[min_idx] > to_sort[j]:
-                min_idx = j
-        to_sort[i], to_sort[min_idx] = to_sort[min_idx], to_sort[i]
+    listlen = len(to_sort)
+    for i in range(listlen):
+        for j in range(i + 1, listlen):
+            if to_sort[i] > to_sort[j]:
+                temp = to_sort[i]
+                to_sort[i] = to_sort[j]
+                to_sort[j] = temp
     return to_sort
 
 
@@ -156,6 +158,18 @@ if __name__ == '__main__':
     plt.tight_layout()
     plt.show()
 
+    """Podpunkt ostatni"""
+    _n_list = [10, 100, 1000]
+    _table = {}
+    for _n in _n_list:
+        eff_test = test_n(1, _n)
+        _table[str(_n)] = {}
+        print(f'testy wydajnościowe dla n = {_n}:')
+        print(f'{"algorytm":<15} | {"n":<4} | {"t(n)":<20}  | {"n * log(n) / n":<20}')
+        for key, _time in eff_test.items():
+            _txt = f'{key:<15} | {_n:<4} | {_time[0]:<20} | {_n * math.log(_n) / _time[0]:<20}'
+            print(_txt)
+        print(f'\n')
     """
     for tick in ticks:
         test_case = test_n(10, tick)
