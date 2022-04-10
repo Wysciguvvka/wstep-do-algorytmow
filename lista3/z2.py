@@ -131,13 +131,11 @@ class Queue:
                 self.__list = sorted(self.__list, key=lambda tup: tup[1], reverse=False)
                 for _item in self.__list:
                     self.queue.insert(_item)
-                return
             if self.sorted == 2:
-                """malejąco"""
+                """Malejąco"""
                 self.__list = sorted(self.__list, key=lambda tup: tup[1], reverse=True)
                 for _item in self.__list:
                     self.queue.insert(_item)
-                return
 
 
 class Bureaucracy:
@@ -214,7 +212,7 @@ if __name__ == '__main__':
     print('\n---\n')
     office_data = []
     for _ in range(100):
-        q = Queue(length=random.randint(10, 40))
+        q = Queue(length=30)
         q1 = deepcopy(q)
         q2 = deepcopy(q)
         office1 = Bureaucracy(a=3, b=3, c=3, e=1, queue=q1, desc="Domyślny")
@@ -240,8 +238,9 @@ if __name__ == '__main__':
     plt.title("Nieposortowana lista - Histogram")
     plt.show()
 
+    office_data.clear()
     for _ in range(100):
-        q = Queue(length=random.randint(10, 40), tsorted=1)
+        q = Queue(length=30, tsorted=1)
         q1 = deepcopy(q)
         q2 = deepcopy(q)
         office1 = Bureaucracy(a=3, b=3, c=3, e=1, queue=q1, desc="Domyślny")
@@ -267,8 +266,9 @@ if __name__ == '__main__':
     plt.title("Lista posortowana rosnąco - Histogram")
     plt.show()
 
+    office_data.clear()
     for _ in range(100):
-        q = Queue(length=random.randint(10, 40), tsorted=2)
+        q = Queue(length=30, tsorted=2)
         q1 = deepcopy(q)
         q2 = deepcopy(q)
         office1 = Bureaucracy(a=3, b=3, c=3, e=1, queue=q1, desc="Domyślny")
