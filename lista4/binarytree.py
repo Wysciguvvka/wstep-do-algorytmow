@@ -1,5 +1,5 @@
 from __future__ import annotations
-from copy import deepcopy
+
 
 class ListNode:
     def __init__(self, data=None, _next=None) -> None:
@@ -242,8 +242,8 @@ if __name__ == '__main__':
     _root.dfs()
     print('\n---')
     """Z2"""
-    flipped_tree = Node.flip_binary_tree(_root)
-    flipped_tree.print_all_nodes()
+    leaf_root = Node.flip_binary_tree(_root)
+    leaf_root.print_all_nodes()
     print('---')
     """Z3"""
     tree = Node("A")
@@ -258,4 +258,3 @@ if __name__ == '__main__':
     print('---')
     tree.min_depth_leaves()
     print('---')
-
