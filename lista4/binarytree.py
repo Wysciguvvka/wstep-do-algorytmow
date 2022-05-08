@@ -166,10 +166,9 @@ class Node:
             count += 1
         return count
 
-    @staticmethod
-    def print_nodes(n: int):
+    def print_nodes(self, n: int):
         print(f'Węzły na poziomie {n}:', end=' ')
-        count = tree.count_nodes(n)
+        count = self.count_nodes(n)
         print(f'\nLiczba węzłów na poziomie {n}: {count}')
 
     def print_all_nodes(self):
@@ -231,19 +230,3 @@ if __name__ == '__main__':
     tree.print_all_nodes()
     print('---')
     tree.min_depth_leaves()
-    """
-    print('---')
-    queue = Queue()
-    queue.insert(1)
-    queue.insert(2)
-    queue.insert(3)
-    _stack = Stack()
-    _stack.push(1)
-    _stack.push(2)
-    _stack.push(3)
-    print(queue)
-    print(_stack)
-    print(_stack.pop())
-    print(queue)
-    print(_stack)
-    """
