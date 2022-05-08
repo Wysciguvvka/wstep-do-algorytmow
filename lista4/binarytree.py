@@ -174,7 +174,7 @@ class Node:
     def print_all_nodes(self):
         for i in range(1, self.height + 1):
             print(f'Węzły na poziomie {i}:', end=' ')
-            count = tree.count_nodes(i)
+            count = self.count_nodes(i)
             print(f'\nLiczba węzłów na poziomie {i}: {count}')
 
     def min_depth_leaves(self):
