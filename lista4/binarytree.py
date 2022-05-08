@@ -1,5 +1,5 @@
 from __future__ import annotations
-
+from copy import deepcopy
 
 class ListNode:
     def __init__(self, data=None, _next=None) -> None:
@@ -177,6 +177,29 @@ class Node:
             count = self.count_nodes(i)
             print(f'\nLiczba węzłów na poziomie {i}: {count}')
 
+    @staticmethod
+    def flip_binary_tree(root):
+        # Base Cases
+        if root is None:
+            return root
+
+        if (root.left is None and
+                root.right is None):
+            return root
+
+        # Recursively call the
+        # same method
+        flipped_tree = Node.flip_binary_tree(root.left)
+
+        # Rearranging main root Node
+        # after returning from
+        # recursive call
+        root.left.left = root.right
+        root.left.right = root
+        root.left = root.right = None
+
+        return flipped_tree
+
     def min_depth_leaves(self):
         q = Queue()
         q.insert(self)
@@ -218,6 +241,10 @@ if __name__ == '__main__':
     print('przeszukiwanie DFS:')
     _root.dfs()
     print('\n---')
+    """Z2"""
+    flipped_tree = Node.flip_binary_tree(_root)
+    flipped_tree.print_all_nodes()
+    print('---')
     """Z3"""
     tree = Node("A")
     tree.left = Node("B")
@@ -230,3 +257,5 @@ if __name__ == '__main__':
     tree.print_all_nodes()
     print('---')
     tree.min_depth_leaves()
+    print('---')
+

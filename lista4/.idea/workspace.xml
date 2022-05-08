@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d658c40-2780-44e1-acbf-4edaf7cbc65d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/binarytree.py" beforeDir="false" afterPath="$PROJECT_DIR$/binarytree.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
