@@ -230,8 +230,8 @@ if __name__ == '__main__':
         f'\n\tUrząd1:{sum(occ1) / len(occ1)}\n\tUrząd2:{sum(occ2) / len(occ2)}')
     plt.figure("nieposortowana lista")
     bins = max([max(occ1) - min(occ1), max(occ2) - min(occ2)])
-    plt.hist(occ1, bins, stacked=True, label="9 Kolejek 1 E", alpha=0.8, color="blue")
-    plt.hist(occ2, bins, stacked=True, label="9 kolejek 3 E", alpha=0.8, color="green")
+    plt.hist(occ1, bins, stacked=True, label="3A 3B 3C 1 E", alpha=0.8, color="blue")
+    plt.hist(occ2, bins, stacked=True, label="2A 2B C 3 E", alpha=0.8, color="green")
     plt.legend()
     plt.xlabel("Iteracje")
     plt.ylabel("Częstość występowania")
@@ -243,7 +243,7 @@ if __name__ == '__main__':
         q = Queue(length=30, tsorted=1)
         q1 = deepcopy(q)
         q2 = deepcopy(q)
-        office1 = Bureaucracy(a=3, b=3, c=3, e=1, queue=q1, desc="Domyślny")
+        office1 = Bureaucracy(a=3, b=3, c=3, e=0, queue=q1, desc="Domyślny")
         office2 = Bureaucracy(a=2, b=2, c=2, e=3, queue=q2, desc="3 ekspertów")
         _data = {
             "Urzad 1": office1.get_iter(),
@@ -258,8 +258,8 @@ if __name__ == '__main__':
         f'Lista posortowana rosnąco - średni czas oczekiwania:'
         f'\n\tUrząd1:{sum(occ1) / len(occ1)}\n\tUrząd2:{sum(occ2) / len(occ2)}')
     bins = max([max(occ1) - min(occ1), max(occ2) - min(occ2)])
-    plt.hist(occ1, bins, stacked=True, label="9 Kolejek 1 E", alpha=0.8, color="blue")
-    plt.hist(occ2, bins, stacked=True, label="9 kolejek 3 E", alpha=0.8, color="green")
+    plt.hist(occ1, bins, stacked=True, label="3A 3B 3C 0 E", alpha=0.8, color="blue")
+    plt.hist(occ2, bins, stacked=True, label="2A 2B 2C 3 E", alpha=0.8, color="green")
     plt.legend()
     plt.xlabel("Iteracje")
     plt.ylabel("Częstość występowania")
@@ -271,7 +271,7 @@ if __name__ == '__main__':
         q = Queue(length=30, tsorted=2)
         q1 = deepcopy(q)
         q2 = deepcopy(q)
-        office1 = Bureaucracy(a=3, b=3, c=3, e=1, queue=q1, desc="Domyślny")
+        office1 = Bureaucracy(a=3, b=3, c=3, e=0, queue=q1, desc="Domyślny")
         office2 = Bureaucracy(a=2, b=2, c=2, e=3, queue=q2, desc="3 ekspertów")
         _data = {
             "Urzad 1": office1.get_iter(),
@@ -286,8 +286,8 @@ if __name__ == '__main__':
         f'\n\tUrząd1:{sum(occ1) / len(occ1)}\n\tUrząd2:{sum(occ2) / len(occ2)}')
     plt.figure("Posortowana lista malejąco")
     bins = max([max(occ1) - min(occ1), max(occ2) - min(occ2)])
-    plt.hist(occ1, bins, stacked=True, label="9 Kolejek 1 E", alpha=0.8, color="blue")
-    plt.hist(occ2, bins, stacked=True, label="9 kolejek 3 E", alpha=0.8, color="green")
+    plt.hist(occ1, bins, stacked=True, label="3A 3B 3C 0 E", alpha=0.8, color="blue")
+    plt.hist(occ2, bins, stacked=True, label="2A 2B 2C 3 E", alpha=0.8, color="green")
     plt.legend()
     plt.xlabel("Iteracje")
     plt.ylabel("Częstość występowania")

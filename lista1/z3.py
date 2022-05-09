@@ -8,7 +8,7 @@ def gauss_elimination(matrix: np.array) -> np.array:
         raise ValueError('niepoprawny rozmiar macierzy')
     for i in range(rows):
         if matrix[i, i] == 0:
-            continue  # break
+            continue
         matrix[i] /= matrix[i, i]
         # for j in range(i+1, rows)
         for j in range(0, rows):
@@ -18,5 +18,5 @@ def gauss_elimination(matrix: np.array) -> np.array:
 
 
 if __name__ == '__main__':
-    matrix_a = np.array([[1, 2, 3, 4], [3, 4, 9, 12], [6, 4, 12, 16]])
+    matrix_a = np.array([[1, 2, 3, 4], [1, 1, 9, 12], [6, 4, 12, 16]])
     print(gauss_elimination(matrix_a))

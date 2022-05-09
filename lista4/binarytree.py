@@ -92,10 +92,11 @@ class Queue:
 class Node:
     """Klasa reprezentująca węzeł drzewa binarnego."""
 
-    def __init__(self, data=None, *, left: Node = None, right: Node = None) -> None:
+    def __init__(self, data=None, *, left: Node = None, right: Node = None, parent=None) -> None:
         self.data = data
         self.left = left
         self.right = right
+        self.parent = parent
 
     @property
     def height(self) -> int:
@@ -179,26 +180,41 @@ class Node:
 
     @staticmethod
     def flip_binary_tree(root):
-        # Base Cases
         if root is None:
             return root
 
-        if (root.left is None and
-                root.right is None):
+        if root.left is None and root.right is None:
             return root
 
-        # Recursively call the
-        # same method
         flipped_tree = Node.flip_binary_tree(root.left)
 
-        # Rearranging main root Node
-        # after returning from
-        # recursive call
         root.left.left = root.right
         root.left.right = root
         root.left = root.right = None
 
         return flipped_tree
+
+    @staticmethod
+    def solve(root, leaf):
+        def helper(node, new_par):
+            if not node:
+                return None
+            if node == root:
+                node.parent = new_par
+                if node.left == new_par:
+                    node.left = None
+                if node.right == new_par:
+                    node.right = None
+                return root
+            if node.left:
+                node.right = node.left
+            if node.parent.left == node:
+                node.parent.left = None
+            node.left = helper(node.parent, node)
+            node.parent = new_par
+            return node
+
+        return helper(leaf, None)
 
     def min_depth_leaves(self):
         q = Queue()
@@ -225,14 +241,23 @@ class Node:
 
 
 if __name__ == '__main__':
+    print("Z1")
     _root = Node(1)
-    _root.left = Node(2)
-    _root.right = Node(3)
-    _root.left.left = Node(4)
-    _root.left.left.left = Node(8)
-    _root.left.right = Node(5)
-    _root.right.left = Node(6)
-    _root.right.right = Node(7)
+    _root.left = Node(2, parent=_root)
+    _root.right = Node(3, parent=_root)
+    _root.left.left = Node(4, parent=_root.left)
+    _root.left.left.left = Node(8, parent=_root.left.left)
+    _root.left.right = Node(5, parent=_root.left)
+    _root.right.left = Node(6, parent=_root.right)
+    _root.right.right = Node(7, parent=_root.right)
+    # Struktura drzewa binarnego
+    #            1
+    #         /     \
+    #        2       3
+    #      /   \    /  \
+    #     4     5  6    7
+    #    /
+    #   8
     print(f'Wysokość drzewa: {_root.height}')
     print('---')
     print('przeszukiwanie BFS:')
@@ -242,16 +267,28 @@ if __name__ == '__main__':
     _root.dfs()
     print('\n---')
     """Z2"""
-    leaf_root = Node.flip_binary_tree(_root)
+    print("Z2:\ndrzewo początkowe:")
+    _root.print_all_nodes()
+    leaf_root = Node.solve(_root, _root.right.right)
+    print('\nDrzewo z korzeniem jako liść "8":\n8')
     leaf_root.print_all_nodes()
     print('---')
     """Z3"""
+    print("Z3")
     tree = Node("A")
     tree.left = Node("B")
     tree.right = Node("C")
     tree.left.left = Node("D")
     tree.left.right = Node("E")
     tree.left.left.left = Node("F")
+    # Struktura drzewa binarnego
+    #            A
+    #         /     \
+    #        B       C
+    #      /   \
+    #     D     E
+    #    /
+    #   F
     # tree.print_nodes(3)
     # print('---')
     tree.print_all_nodes()

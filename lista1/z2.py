@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def symmetric_dist(matrix_a: np.array, matrix_b: np.array) -> int | float:
+def symmetric_dist(matrix_a: np.array, matrix_b: np.array) -> float:
     if matrix_a.shape != matrix_b.shape:
         raise ValueError
     return np.abs(matrix_a - matrix_b).sum()
