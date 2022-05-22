@@ -36,6 +36,7 @@ target2 = "tabucvdewxfyz"
 sourceLen2 = len(source2)
 targetLen2 = len(target2)
 
+##
 ed = EditingDistances()
 print(ed.lcs(source1, target1, sourceLen1, targetLen1, 0))
 print(ed.lcs_w_breaks(source2, target2, sourceLen2, targetLen2))
