@@ -18,7 +18,7 @@ class LocalStore:
             occurrences = 0
             for product in self.products:
                 if product[0] == product_id:
-                    occurrences += 1
+                    occurrences = 1
                     if product[2] is True and not isinstance(client[2], int):
                         raise TypeError(f'Niepoprawna ilość produktu {product_id} u klienta {client[0]}')
                     break
@@ -36,5 +36,5 @@ class LocalStore:
 
 
 if __name__ == '__main__':
-    random_store = LocalStore()
-    assert random_store.total_price(0) == 73.0
+    store = LocalStore()
+    assert store.total_price(0) == 73.0

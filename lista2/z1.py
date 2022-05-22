@@ -1,9 +1,8 @@
 import math
 from typing import Callable
-import asyncio
 
 
-async def bubblesort(to_sort: list) -> list:
+def bubblesort(to_sort: list) -> list:
     listlen = len(to_sort)
     for i in range(listlen):
         for j in range(listlen - i - 1):
@@ -12,7 +11,7 @@ async def bubblesort(to_sort: list) -> list:
     return to_sort
 
 
-async def bubblesort_smart(to_sort: list) -> list:
+def bubblesort_smart(to_sort: list) -> list:
     listlen = len(to_sort)
     for i in range(listlen):
         done = True
@@ -25,7 +24,7 @@ async def bubblesort_smart(to_sort: list) -> list:
     return to_sort
 
 
-async def bubblesort_naive(to_sort: list) -> list:
+def bubblesort_naive(to_sort: list) -> list:
     listlen = len(to_sort)
     for i in range(listlen):
         for j in range(listlen - 1):
@@ -34,7 +33,7 @@ async def bubblesort_naive(to_sort: list) -> list:
     return to_sort
 
 
-async def insertionsort(to_sort: list) -> list:
+def insertionsort(to_sort: list) -> list:
     for i in range(1, len(to_sort)):
         _key = to_sort[i]
         j = i - 1
@@ -45,7 +44,7 @@ async def insertionsort(to_sort: list) -> list:
     return to_sort
 
 
-async def selectionsort(to_sort: list) -> list:
+def selectionsort(to_sort: list) -> list:
     listlen = len(to_sort)
     for i in range(listlen):
         for j in range(i + 1, listlen):
@@ -56,8 +55,6 @@ async def selectionsort(to_sort: list) -> list:
     return to_sort
 
 
-# todo: schematy blokowe
-
 if __name__ == '__main__':
     import matplotlib.pyplot as plt
     import pandas as pd
@@ -67,7 +64,7 @@ if __name__ == '__main__':
 
     def test_alg(_list: list, alg: Callable):
         start = timeit.default_timer()
-        asyncio.run(alg(_list))
+        alg(_list)
         end = timeit.default_timer()
         dt = end - start
         return dt
@@ -159,17 +156,17 @@ if __name__ == '__main__':
     plt.show()
 
     """Podpunkt ostatni"""
+    print('\n')
     _n_list = [10, 100, 1000]
     _table = {}
+    print(f'testy wydajnościowe dla n:')
+    print(f'{"algorytm":<15} | {"n":<4} | {"t(n) [s]":<25}  | {"n * log(n) / n":<20}')
     for _n in _n_list:
         eff_test = test_n(1, _n)
         _table[str(_n)] = {}
-        print(f'testy wydajnościowe dla n = {_n}:')
-        print(f'{"algorytm":<15} | {"n":<4} | {"t(n)":<20}  | {"n * log(n) / n":<20}')
         for key, _time in eff_test.items():
-            _txt = f'{key:<15} | {_n:<4} | {_time[0]:<20} | {_n * math.log(_n) / _time[0]:<20}'
+            _txt = f'{key:<15} | {_n:<4} | {_time[0]:<25} | {_n * math.log(_n) / _time[0]}'
             print(_txt)
-        print(f'\n')
     """
     for tick in ticks:
         test_case = test_n(10, tick)

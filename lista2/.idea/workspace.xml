@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ebe3335-7bde-4ae0-9655-6f2f888b9cce" name="Changes" comment="">
+    <list default="true" id="4249b779-5750-4a7f-af36-3e62ad0fa0ea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../lista1/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../lista1/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../lista1/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lista1/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
@@ -10,20 +10,11 @@
       <change beforePath="$PROJECT_DIR$/../lista1/z2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lista1/z2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lista1/z3.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lista1/z3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lista1/z4.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lista1/z4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista2/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista2/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista2/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lista2/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lista2/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista2/z1.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lista2/z1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista3/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista3/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista3/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lista3/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista3/z2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lista3/z2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/binarytree.py" beforeDir="false" afterPath="$PROJECT_DIR$/binarytree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/z1.py" beforeDir="false" afterPath="$PROJECT_DIR$/z1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="28uvrMSHU7yWNCxdZ0Xc61p1VO1" />
+  <component name="ProjectId" id="270IuFJjgXHD7UfP2M2zOz3lruX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -42,10 +33,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Hollow Knight/Void-installer" />
   </component>
   <component name="RunManager">
-    <configuration name="binarytree" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="lista4" />
+    <configuration name="z1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="lista2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -56,7 +48,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/binarytree.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/z1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -67,18 +59,18 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.binarytree" />
+        <item itemvalue="Python.z1" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4ebe3335-7bde-4ae0-9655-6f2f888b9cce" name="Changes" comment="" />
-      <created>1652079483112</created>
+      <changelist id="4249b779-5750-4a7f-af36-3e62ad0fa0ea" name="Changes" comment="" />
+      <created>1648450797253</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1652079483112</updated>
+      <updated>1648450797253</updated>
     </task>
     <servers />
   </component>
