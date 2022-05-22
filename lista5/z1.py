@@ -147,28 +147,32 @@ def hamming(_s1: str, _s2: str, printing: bool = False) -> int:
     s1 = remove_diacritical(_s1)
     s2 = remove_diacritical(_s2)
     if len(s1) != len(s2):
-        print("String are not equal")
+        print("Podane słowa nie są równej długości")
         return -1
     for x, (i, j) in enumerate(zip(s1, s2)):
         if i != j:
             if printing:
-                print(f'char not math{_s1[x], _s2[x]} in {x}')
+                print(f'Nie zgadza się znak {_s1[x], _s2[x]} na miejscu {x}')
             result += 1
+    if printing:
+        print(f'Podobieństwo wyrazów {_s1} i {_s2}: {result}')
     return result
 
 
-def kb_distance(_s1: str, _s2: str, printing:bool = False) -> int:
+def kb_distance(_s1: str, _s2: str, printing: bool = False) -> int:
     result = 0
     s1 = remove_diacritical(_s1)
     s2 = remove_diacritical(_s2)
     if len(s1) != len(s2):
-        print("String are not equal")
+        print("Podane słowa nie są równej długości")
         return -1
     for x, (i, j) in enumerate(zip(s1, s2)):
         if i != j:
             if printing:
-                print(f'char not math{_s1[x], _s2[x]} in {x}')
+                print(f'Nie zgadza się znak {_s1[x], _s2[x]} na miejscu {x}')
             result += 1 if i in NEARBY_CHARS[j] else 2
+    if printing:
+        print(f'Podobieństwo wyrazów {_s1} i {_s2}: {result}')
     return result
 
 
@@ -176,15 +180,20 @@ def search_in_wl(
         query, comp_method: Callable[[str, str], int] = hamming
 ) -> None:
     if query in wordlist:
-        print(f"Found {query} in word list!")
+        print(f"Znaleziono {query} na liście słów!")
         return
     part = partial(comp_method, query)
     matching_lens = [w for w in wordlist if len(w) == len(query)]
     matching_lens.sort(key=part)
     if matching_lens:
-        print(f"Didn't find your query, closest words to {query} are... {', '.join(matching_lens[0:2])}")
+        print(f"Nie znaleziono wyrazu {query}. Najbliższe słowa to: {', '.join(matching_lens[0:3])}")
     else:
-        print(f"Didn't find your query or any similar words.")
+        print(f"Nie znaleziono wyrauz oraz podobnych słów.")
 
 
-search_in_wl('asdf')
+print('odległość Hamminga:')
+hamming('mama', 'nawa', True)
+print('odległość Hamminga - modyfikacja:')
+kb_distance('mama', 'nawa', True)
+print('najbliższe słowa do nawa:')
+search_in_wl('nawa')

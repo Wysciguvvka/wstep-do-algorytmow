@@ -1,6 +1,7 @@
 import numpy as np
 
 DIACRITICAL = [('ę', 'ó', 'ą', 'ś', 'ł', 'ż', 'ź', 'ć', 'ń'), ('e', 'o', 'a', 's', 'l', 'z', 'x', 'c', 'n')]
+
 pol = {
     'a': 9.9,
     'b': 1.47,
@@ -85,9 +86,12 @@ ger = {
     'y': 1.039,
     'z': 1.134
 }
+pol_vow_cons = {'vowels': 37.980000000000004, 'consonants': 62.029999999999994}
+en_vow_cons = {'vowels': 38.5, 'consonants': 61.91999999999999}
+ger_vow_cons = {'vowels': 36.221999999999994, 'consonants': 62.357000000000006}
+
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
            'w', 'x', 'y', 'z']
-print(sum(en.values()))
 
 
 def remove_diacritical(text: str) -> str:
@@ -110,20 +114,60 @@ def closest_lang(text: str) -> None:
     dist = [en_dist, pol_dist, ger_dist]
     min_dist = min(dist)
     if min_dist == en_dist:
-        print('angielski')
+        print('Najbardziej podobny język na podstawie częstośći występowania liter to angielski')
         return
     if min_dist == pol_dist:
-        print('polski')
+        print('Najbardziej podobny język na podstawie częstośći występowania liter to angielski')
         return
     if min_dist == ger_dist:
-        print('niemiecki')
+        print('Najbardziej podobny język na podstawie częstośći występowania liter to angielski')
         return
     return
 
 
+def closest_by_vowels_and_consonants(text: str) -> None:
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    text = remove_diacritical(text).lower()
+    vowels_sum = 0
+    for vowel in vowels:
+        vowels_sum += text.count(vowel)
+    vowels_percentage = vowels_sum / len(text) * 100
+    consonants_percentage = 100 - vowels_percentage
+    vow_con = [vowels_percentage, consonants_percentage]
+    en_diff = [x1 - x2 for (x1, x2) in zip(vow_con, en_vow_cons.values())]
+    pol_diff = [x1 - x2 for (x1, x2) in zip(vow_con, pol_vow_cons.values())]
+    ger_diff = [x1 - x2 for (x1, x2) in zip(vow_con, ger_vow_cons.values())]
+    en_dist = np.linalg.norm(en_diff)
+    pol_dist = np.linalg.norm(pol_diff)
+    ger_dist = np.linalg.norm(ger_diff)
+    dist = [en_dist, pol_dist, ger_dist]
+    min_dist = min(dist)
+    if min_dist == en_dist:
+        print('Najbardziej podobny język na podstawie spółgłosek i samogłosek to angielski')
+        return
+    if min_dist == pol_dist:
+        print('Najbardziej podobny język na podstawie spółgłosek i samogłosek to polski')
+        return
+    if min_dist == ger_dist:
+        print('Najbardziej podobny język na podstawie spółgłosek i samogłosek to niemiecki')
+        return
+
+
 with open('ger.txt', 'r', encoding='utf-8') as german:
-    closest_lang(german.read())
+    print('\nJęzyk tekstu: Niemiecki')
+    _text = german.read()
+    closest_lang(_text)
+    closest_by_vowels_and_consonants(_text)
+
 with open('pol.txt', 'r', encoding='utf-8') as polish:
-    closest_lang(polish.read())
+    print('\nJęzyk tekstu: Polski')
+    _text = polish.read()
+    closest_lang(_text)
+    closest_by_vowels_and_consonants(_text)
+
 with open('eng.txt', 'r', encoding='utf-8') as english:
-    closest_lang(english.read())
+    print('\nJęzyk tekstu: Angielski')
+    _text = english.read()
+    closest_lang(_text)
+    closest_by_vowels_and_consonants(_text)
+
