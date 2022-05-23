@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ebe3335-7bde-4ae0-9655-6f2f888b9cce" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../lista1/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista1/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista1/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lista1/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lista1/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista1/z1.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lista1/z1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista1/z2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lista1/z2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista1/z3.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lista1/z3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista1/z4.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lista1/z4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista2/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista2/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista2/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lista2/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lista2/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista2/z1.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lista2/z1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista3/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista3/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista3/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lista3/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lista3/z2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lista3/z2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/binarytree.py" beforeDir="false" afterPath="$PROJECT_DIR$/binarytree.py" afterDir="false" />
-    </list>
+    <list default="true" id="4ebe3335-7bde-4ae0-9655-6f2f888b9cce" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,6 +19,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Hollow Knight/Void-installer" />
   </component>
   <component name="RunManager">
     <configuration name="binarytree" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">

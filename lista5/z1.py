@@ -1,4 +1,3 @@
-import string
 from typing import Callable
 from functools import partial
 
@@ -48,7 +47,7 @@ wordlist = [
     "kopiarka",
     "cyrk",
     "zysk",
-    "stanik",
+    "palnik",
     "dziennikarz",
     "podpis",
     "curry",
@@ -143,6 +142,8 @@ def remove_diacritical(text: str) -> str:
 
 
 def hamming(_s1: str, _s2: str, printing: bool = False) -> int:
+    if printing:
+        print(f'porównanie słów {_s1} i {_s2}:')
     result = 0
     s1 = remove_diacritical(_s1)
     s2 = remove_diacritical(_s2)
@@ -180,20 +181,26 @@ def search_in_wl(
         query, comp_method: Callable[[str, str], int] = hamming
 ) -> None:
     if query in wordlist:
-        print(f"Znaleziono {query} na liście słów!")
+        print(f"OK - Znaleziono {query} na liście słów")
         return
     part = partial(comp_method, query)
     matching_lens = [w for w in wordlist if len(w) == len(query)]
     matching_lens.sort(key=part)
     if matching_lens:
         print(f"Nie znaleziono wyrazu {query}. Najbliższe słowa to: {', '.join(matching_lens[0:3])}")
+        for word in matching_lens[0:3]:
+            hamming(query, word, False)
     else:
         print(f"Nie znaleziono wyrauz oraz podobnych słów.")
 
 
 print('odległość Hamminga:')
-hamming('mama', 'nawa', True)
+hamming('nawa', 'lawa', True)
+print('----\n')
 print('odległość Hamminga - modyfikacja:')
-kb_distance('mama', 'nawa', True)
-print('najbliższe słowa do nawa:')
-search_in_wl('nawa')
+kb_distance('nawa', 'lawa', True)
+print('-----\n')
+print('najbliższe słowa do słońce:')
+search_in_wl('słońce')
+print('------\n')
+search_in_wl('krab')
