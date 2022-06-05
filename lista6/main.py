@@ -6,15 +6,15 @@ class Vertex:
     def __init__(self, vertex):
         self.name = vertex
         self.neighbors = []
-        self.neighbors_vortices = []
+        self.neighbors_vertices = []
 
     def add_neighbor(self, neighbor):
         if isinstance(neighbor, Vertex):
             if neighbor.name not in self.neighbors:
                 self.neighbors.append(neighbor.name)
-                self.neighbors_vortices.append(neighbor)
+                self.neighbors_vertices.append(neighbor)
                 neighbor.neighbors.append(self.name)
-                neighbor.neighbors_vortices.append(self)
+                neighbor.neighbors_vertices.append(self)
                 self.neighbors = sorted(self.neighbors)
                 neighbor.neighbors = sorted(neighbor.neighbors)
         else:
@@ -25,9 +25,9 @@ class Vertex:
             if isinstance(neighbor, Vertex):
                 if neighbor.name not in self.neighbors:
                     self.neighbors.append(neighbor.name)
-                    self.neighbors_vortices.append(neighbor)
+                    self.neighbors_vertices.append(neighbor)
                     neighbor.neighbors.append(self.name)
-                    neighbor.neighbors_vortices.append(self)
+                    neighbor.neighbors_vertices.append(self)
                     self.neighbors = sorted(self.neighbors)
                     neighbor.neighbors = sorted(neighbor.neighbors)
             else:
@@ -91,9 +91,9 @@ class Graph:
         for v in self.vertices_list:
             if not visited[v.name]:
                 temp = []
-                __vortices = self.dfs_util(temp, v.name, visited)
-                cc.append(__vortices)
-                names.append([vertex.name for vertex in __vortices])
+                _vertices = self.dfs_util(temp, v.name, visited)
+                cc.append(_vertices)
+                names.append([vertex.name for vertex in _vertices])
         return names, cc
 
     @property
@@ -187,9 +187,9 @@ def random_graph(nodes):
 def graph_to_nx(_graph):
     nx_graph = nx.Graph()
     for vertex in _graph.vertices_list:
-        if not vertex.neighbors_vortices:
+        if not vertex.neighbors_vertices:
             nx_graph.add_node(vertex.name)
-        for conn in vertex.neighbors_vortices:
+        for conn in vertex.neighbors_vertices:
             nx_graph.add_edge(vertex.name, conn.name)
 
     return nx_graph
