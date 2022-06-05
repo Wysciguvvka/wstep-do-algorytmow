@@ -117,10 +117,10 @@ def closest_lang(text: str) -> None:
         print('Najbardziej podobny język na podstawie częstośći występowania liter to angielski')
         return
     if min_dist == pol_dist:
-        print('Najbardziej podobny język na podstawie częstośći występowania liter to angielski')
+        print('Najbardziej podobny język na podstawie częstośći występowania liter to polski')
         return
     if min_dist == ger_dist:
-        print('Najbardziej podobny język na podstawie częstośći występowania liter to angielski')
+        print('Najbardziej podobny język na podstawie częstośći występowania liter to niemiecki')
         return
     return
 
@@ -170,4 +170,7 @@ with open('eng.txt', 'r', encoding='utf-8') as english:
     _text = english.read()
     closest_lang(_text)
     closest_by_vowels_and_consonants(_text)
-
+print('-----')
+_text = 'dzisiaj jest poniedziałek'
+closest_lang(_text)
+closest_by_vowels_and_consonants(_text)
